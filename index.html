@@ -313,6 +313,178 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://c0ver1.github.io/2021/02/01/Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="newc0ver's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/02/01/Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" itemprop="url">Python学习之数据可视化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-02-01T22:41:52+08:00">
+                2021-02-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">Python学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/02/01/Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2021/02/01/Python数据可视化/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/02/01/Python%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/" class="leancloud_visitors" data-flag-title="Python学习之数据可视化">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>大二开学初就已经买了这本《Python编程》，当时由于时间紧（误），只简单看完了基本语法相关章节，随后就是很长一段时间搁置……寒假回家时就随手拿上了。今天翻看时感觉数据可视化部分实用性还是挺高的，准备接下来一段时间学习并更新几篇相关的记录。</p>
+</blockquote>
+<p>Python中常用的绘图库之一是matplotlib，可以用其来制作简单的图表。</p>
+<h4 id="1-安装matplotlib"><a href="#1-安装matplotlib" class="headerlink" title="1. 安装matplotlib"></a>1. 安装matplotlib</h4><h5 id="1-1-Windows："><a href="#1-1-Windows：" class="headerlink" title="1.1 Windows："></a>1.1 Windows：</h5><p>首先要安装Visual Studio，不过我想这个软件大部分人已经使用过了。若未安装，请到Visual Studio的<a target="_blank" rel="noopener" href="https://visualstudio.microsoft.com/zh-hans/">官网</a>下载免费的社区版。接下来打开Powershell或者命令行输入<code>python -m pip install matplotlib</code>回车等待即可。<br></p>
+<h5 id="1-2-Linux："><a href="#1-2-Linux：" class="headerlink" title="1.2 Linux："></a>1.2 Linux：<br></h5><p>   　打开终端，输入<code>sudo apt-get install python3-matplotlib</code>回车即可，若系统自带的是Python 2.x，请尝试<code>sudo apt-get install python-matplotlib</code>。<br></p>
+<h5 id="1-3-OS-X："><a href="#1-3-OS-X：" class="headerlink" title="1.3 OS X："></a>1.3 OS X：<br></h5><p>   注：由于条件限制，此条目并未进行试验。<br><br>   　Apple的标准Python安装自带了matplotlib，可以打开终端尝试导入matplotlib；如果系统没有自带matplotlib，而且Python是通过Homebrew安装的，则可以通过执行<code>pip install --user matplotlib</code>命令安装，若仍未成功，请尝试将<code>pip</code>更换为<code>pip3</code>，或删去<code>--user</code>。<br></p>
+<h5 id="1-4-测试matplotlib"><a href="#1-4-测试matplotlib" class="headerlink" title="1.4 测试matplotlib"></a>1.4 测试matplotlib<br></h5><p>   　在终端中输入python或python3启动会话后，输入<code>import matplotlib</code>，若无报错，说明我们成功安装了matplotlib。<br></p>
+<h4 id="2-绘制简单的折线图"><a href="#2-绘制简单的折线图" class="headerlink" title="2. 绘制简单的折线图"></a>2. 绘制简单的折线图</h4><p>matplotlib的官网<a target="_blank" rel="noopener" href="http://matplotlib.org/">http://matplotlib.org/</a>提供了matplotlib可制作的各种图表的示例及生成代码。下面，我们就正式使用matplotlib来绘制一个简单的折线图。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://c0ver1.github.io/2021/01/09/%E5%8C%BF%E5%90%8D%E6%8F%90%E9%97%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -516,7 +688,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -527,12 +699,21 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
